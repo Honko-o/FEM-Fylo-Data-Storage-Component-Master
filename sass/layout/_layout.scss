@@ -1,0 +1,36 @@
+@use '../core/' as *;
+main {
+    @media (min-width: 800px) {
+        flex-basis: 70%;
+    }
+}
+body {
+    @include flex(center, center);
+    background-color: $natural-blue-900;
+}
+.storage-wrapper {
+    @media (min-width: 800px) {
+        display: flex;
+        gap: 30px;
+    }
+}
+.bg-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -1;
+    @media (min-width: 376px) {
+        display: none;
+    }
+}
+.bg-desktop {
+    display: none;
+    @media (min-width: 376px) {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+}

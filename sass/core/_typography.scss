@@ -1,0 +1,8 @@
+@use './variables' as *;
+
+body {
+    font-size: $root-font-size;
+    font-family: 'Raleway', sans-serif;
+}
+// - Family: [Raleway](https://fonts.google.com/specimen/Raleway)
+// - Weights: 400, 700

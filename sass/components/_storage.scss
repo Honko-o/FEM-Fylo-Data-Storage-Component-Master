@@ -1,0 +1,130 @@
+@use '../core/' as *;
+
+.storage {
+    @media (min-width: 800px) {
+        margin-bottom: 0;
+    }
+    min-width: 20rem;
+    padding: 1.875rem;
+    margin-bottom: 1rem;
+    background-color: $natural-blue-600;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 11%);
+    border-radius: 1em 6em 1em 1em;
+    .logo {
+        display: block;
+    }
+}
+.storage__logo {
+    margin-bottom: 2rem;
+}
+.storage__icons {
+    display: flex;
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $natural-blue-900;
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+        border-radius: 1em;
+    }
+    img {
+        display: block;
+    }
+}
+.storage__details {
+    @media (min-width: 800px) {
+        flex: 1;
+        margin-top: 30px;
+    }
+    position: relative;
+    padding: 1.875rem;
+    border-radius: 1em;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 11%);
+    background-color: $natural-blue-600;
+    > p {
+        color: $neutural-blue-400;
+        margin-bottom: 1rem;
+        @media (min-width: 800px) {
+            text-align: left;
+        }
+    }
+    .consumed-storage {
+        font-weight: 700;
+    }
+    .progress {
+        background-color: $natural-blue-900;
+        border: 2px solid $natural-blue-900;
+        height: 18px;
+        border-radius: 1em;
+        margin-bottom: 0.5em;
+    }
+    .progress-bar {
+        position: relative;
+        height: 100%;
+        width: 70%;
+        border-radius: 1em;
+        background: linear-gradient(to right,hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) 100%);
+        margin-bottom: 0.5em;
+        &::before {
+            content: "";
+            position: absolute;
+            right: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+        }
+    }
+    .progress-bar-limit {
+        @include flex(space-between, center);
+        color: $neutural-blue-400;
+        font-weight: 700;
+        margin-bottom: 3em;
+    }
+    .storage-left {
+        position: relative;
+        @include flex(space-between, center);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 6px;
+        padding: 5px 15px;
+        background: white;
+        color: $natural-blue-900;
+        font-weight: 700;
+        font-size: 2rem;
+        width: 200px;
+        span {
+            font-size: 1rem;
+            color: $neutural-gray-blue;
+            @media (min-width: 900px) {
+                margin-left: 15px;
+            }
+        }
+        @media (min-width: 900px) {
+            justify-content: flex-start;
+            left: auto;
+            top: 0;
+            right: 30px;
+            transform: translate(0, -50%);
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: -25px;
+                width: 0;
+                border: 10px solid;
+                border-bottom-width: 30px;
+                border-top-width: 0px;
+                border-right-width: 20px;
+                border-left-width: 20px;
+                border-color: transparent white transparent transparent;
+            }
+        }
+    }
+}
